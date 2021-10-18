@@ -5,5 +5,5 @@
 Проект выглядит как профиль путешественника с личными фотографиями и выполнен, используя html, css, js.
 
 
-Ссылка на  github: https://yzavyalova.github.io/russian-travel/
+Ссылка на  github: https://github.com/YZavyalova/mesto.git
 
