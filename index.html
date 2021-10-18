@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+    <header class="header page__header">
+        <a href="#">
+            <img src="./images/logo.svg" alt="логотип" class="header__logo">
+        </a>
+    </header>
+    <main class="main">
+        <section class="profile page__profile">
+            <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar">
+            <div class="profile__info">
+                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <button type="button" class="profile__edit-btn"></button>
+            </div>
+            <p class="profile__description">Исследователь океана</p>
+            <button class="profile__add-btn"></button>
+        </section>
+        <section class="photo page__photo">
+            <ul class="photo__items">
+                <li class="photo-card">
+                    <img src="./images/grid-karachevsk.jpg" alt="Карачаевск" class="photo-card__img">
+                    <div class="photo-card__innerwrap">
+                        <p class="photo-card__text">Карачаевск</p>
+                        <button class="photo-card__like-btn"></button>
+                    </div>
+                </li>
+                <li class="photo-card">
+                    <img src="./images/grid-elbrus.jpg" alt="Эльбрус" class="photo-card__img">
+                    <div class="photo-card__innerwrap">
+                        <p class="photo-card__text">Гора Эльбрус</p>
+                        <button class="photo-card__like-btn"></button>
+                    </div>
+                </li>
+                <li class="photo-card">
+                    <img src="./images/grid-astrakhan.jpg" alt="Астрахань" class="photo-card__img">
+                    <div class="photo-card__innerwrap">
+                        <p class="photo-card__text">Астрахань</p>
+                        <button class="photo-card__like-btn"></button>
+                    </div>
+                </li>
+                <li class="photo-card">
+                    <img src="./images/grid-dombai.jpg" alt="Домбай" class="photo-card__img">
+                    <div class="photo-card__innerwrap">
+                        <p class="photo-card__text">Домбай</p>
+                        <button class="photo-card__like-btn"></button>
+                    </div>
+                </li>
+                <li class="photo-card">
+                    <img src="./images/grid-essentuki.jpg" alt="Ессентуки" class="photo-card__img">
+                    <div class="photo-card__innerwrap">
+                        <p class="photo-card__text">Ессентуки</p>
+                        <button class="photo-card__like-btn"></button>
+                    </div>
+                </li>
+                <li class="photo-card">
+                    <img src="./images/grid-kamchatka.jpg" alt="Камчатка" class="photo-card__img">
+                    <div class="photo-card__innerwrap">
+                        <p class="photo-card__text">Камчатка</p>
+                        <button class="photo-card__like-btn"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer page__footer">
+        <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+        <div class="popup__container">
+            <button class="popup__close-btn"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form">
+                <input name="name" type="text" class="popup__input popup__input_type_name" placeholder="Жак-Ив Кусто">
+                <input name="job" type="text" class="popup__input popup__input_type_job" placeholder="Исследователь океана">
+                <button type="submit" class="popup__save-btn">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
