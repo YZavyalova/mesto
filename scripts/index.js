@@ -17,7 +17,7 @@ const closePopupByClickOverlay = function (event) {
         togglePopupVisibility();}
 };
 
-//изменение данных в полях ввода
+//изменение данных в полях ввода и закрытие
 function formSubmitHandler (event) {
     event.preventDefault();
     profileName.textContent = nameInput.value;
