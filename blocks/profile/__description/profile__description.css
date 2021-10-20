@@ -14,5 +14,6 @@
     .profile__description{
         margin-top: 9px;
         font-size: 14px;
+        max-width: 282px;
     } 
 }

@@ -15,8 +15,7 @@ const makeLike = function() {
 
 for (let index=0; index < likeButton.length; ++index) {
     likeButton[index].addEventListener("click", makeLike);
-
-}
+};
 
 //добавляет элемент для открытия и закрытия попапа + присваивает значения в полях
 const openPopup = function() {
