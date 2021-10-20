@@ -12,10 +12,6 @@
     margin: 0 auto;
 }
 
-.popup__input:focus {
-    outline: none;
-}
-
 @media (max-width: 550px) {
     .popup__input{
         font-size: 14px;

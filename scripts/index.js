@@ -7,10 +7,18 @@ const jobInput = popupElement.querySelector(".popup__input_type_job");
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__description");
 
-//добавляет элемент для открытия и закрытия попапа
-const togglePopupVisibility = function () {
-    popupElement.classList.toggle("popup_opened");
+//добавляет элемент для открытия и закрытия попапа + присваивает значения в полях
+
+const openPopup = function() {
+    popupElement.classList.add("popup_opened");
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
 };
+
+const closePopup = function() {
+    popupElement.classList.remove("popup_opened");
+}
+
 //для закрытия попапа по клику на область
 const closePopupByClickOverlay = function (event) {
     if (event.target === event.currentTarget) {
@@ -22,10 +30,10 @@ function formSubmitHandler (event) {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    togglePopupVisibility();
+    closePopup();
 } 
 
-popupOpenButtonElement.addEventListener("click", togglePopupVisibility);
-popupCloseButtonElement.addEventListener("click", togglePopupVisibility);
+popupOpenButtonElement.addEventListener("click", openPopup);
+popupCloseButtonElement.addEventListener("click", closePopup);
 popupElement.addEventListener("click", closePopupByClickOverlay);
 formElement.addEventListener("submit", formSubmitHandler);

@@ -15,6 +15,3 @@
     background-image:url(../../../images/like-hvr.svg);
 }
 
-.photo-card__like-btn:active {
-    background-image:url(../../../images/like-active.svg);
-}

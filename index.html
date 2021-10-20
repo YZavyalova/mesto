@@ -21,7 +21,7 @@
                 <button type="button" class="profile__edit-btn"></button>
             </div>
             <p class="profile__description">Исследователь океана</p>
-            <button class="profile__add-btn"></button>
+            <button type="button" class="profile__add-btn"></button>
         </section>
         <section class="photo page__photo">
             <ul class="photo__items">
@@ -29,42 +29,42 @@
                     <img src="./images/grid-karachevsk.jpg" alt="Карачаевск" class="photo-card__img">
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Карачаевск</p>
-                        <button class="photo-card__like-btn"></button>
+                        <button type="button" class="photo-card__like-btn photo-card__like-btn_active"></button>
                     </div>
                 </li>
                 <li class="photo-card">
                     <img src="./images/grid-elbrus.jpg" alt="Эльбрус" class="photo-card__img">
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Гора Эльбрус</p>
-                        <button class="photo-card__like-btn"></button>
+                        <button type="button" class="photo-card__like-btn photo-card__like-btn_active"></button>
                     </div>
                 </li>
                 <li class="photo-card">
                     <img src="./images/grid-astrakhan.jpg" alt="Астрахань" class="photo-card__img">
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Астрахань</p>
-                        <button class="photo-card__like-btn"></button>
+                        <button type="button" class="photo-card__like-btn photo-card__like-btn_active"></button>
                     </div>
                 </li>
                 <li class="photo-card">
                     <img src="./images/grid-dombai.jpg" alt="Домбай" class="photo-card__img">
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Домбай</p>
-                        <button class="photo-card__like-btn"></button>
+                        <button type="button" class="photo-card__like-btn photo-card__like-btn_active"></button>
                     </div>
                 </li>
                 <li class="photo-card">
                     <img src="./images/grid-essentuki.jpg" alt="Ессентуки" class="photo-card__img">
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Ессентуки</p>
-                        <button class="photo-card__like-btn"></button>
+                        <button type="button" class="photo-card__like-btn photo-card__like-btn_active"></button>
                     </div>
                 </li>
                 <li class="photo-card">
                     <img src="./images/grid-kamchatka.jpg" alt="Камчатка" class="photo-card__img">
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Камчатка</p>
-                        <button class="photo-card__like-btn"></button>
+                        <button type="button" class="photo-card__like-btn photo-card__like-btn_active"></button>
                     </div>
                 </li>
             </ul>
@@ -75,9 +75,9 @@
     </footer>
     <div class="popup">
         <div class="popup__container">
-            <button class="popup__close-btn"></button>
+            <button type="button" class="popup__close-btn"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form">
+            <form class="popup__form" name="popup-form">
                 <input name="name" type="text" class="popup__input popup__input_type_name" placeholder="Жак-Ив Кусто">
                 <input name="job" type="text" class="popup__input popup__input_type_job" placeholder="Исследователь океана">
                 <button type="submit" class="popup__save-btn">Сохранить</button>

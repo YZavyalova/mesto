@@ -1,6 +1,6 @@
 .popup__close-btn {
     padding: 0;
-    background-image: url(../../../images/Close-btn.svg);
+    background-image: url(../../../images/close-btn.svg);
     background-repeat: no-repeat;
     width: 32px;
     height: 32px;
@@ -20,7 +20,6 @@
 
 @media (max-width: 550px) {
     .popup__close-btn{
-        background-image: url(../../../images/Close-btn\ small.svg);
         width: 20px;
         height: 20px;
         top: -35px;

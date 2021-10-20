@@ -2,6 +2,7 @@
     display: flex;
     gap: 18px;
     grid-area: info;
+    max-width: 336px;
 }
 
 @media (max-width: 650px) {
