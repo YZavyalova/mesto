@@ -15,6 +15,7 @@ const makeLike = function() {
 
 for (let index=0; index < likeButton.length; ++index) {
     likeButton[index].addEventListener("click", makeLike);
+
 }
 
 //добавляет элемент для открытия и закрытия попапа + присваивает значения в полях
@@ -31,7 +32,7 @@ const closePopup = function() {
 //для закрытия попапа по клику на область
 const closePopupByClickOverlay = function (event) {
     if (event.target === event.currentTarget) {
-        togglePopupVisibility();}
+        closePopup();}
 };
 
 //изменение данных в полях ввода и закрытие
