@@ -6,9 +6,18 @@ const nameInput = popupElement.querySelector(".popup__input_type_name");
 const jobInput = popupElement.querySelector(".popup__input_type_job");
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__description");
+const likeButton = document.querySelectorAll(".photo-card__like-btn");
+
+// добавляет модификатор active на like-btn
+const makeLike = function() {
+    this.classList.toggle("photo-card__like-btn_active");
+};
+
+for (let index=0; index < likeButton.length; ++index) {
+    likeButton[index].addEventListener("click", makeLike);
+}
 
 //добавляет элемент для открытия и закрытия попапа + присваивает значения в полях
-
 const openPopup = function() {
     popupElement.classList.add("popup_opened");
     nameInput.value = profileName.textContent;
