@@ -25,43 +25,49 @@
         </section>
         <section class="photo page__photo">
             <ul class="photo__items">
-                <li class="photo-card">
+                <li class="photo-card photo-card_old">
                     <img src="./images/grid-karachevsk.jpg" alt="Карачаевск" class="photo-card__img">
+                    <button type="button" class="photo-card__delete-btn"></button>
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Карачаевск</p>
                         <button type="button" class="photo-card__like-btn"></button>
                     </div>
                 </li>
-                <li class="photo-card">
+                <li class="photo-card photo-card_old">
                     <img src="./images/grid-elbrus.jpg" alt="Эльбрус" class="photo-card__img">
+                    <button type="button" class="photo-card__delete-btn"></button>
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Гора Эльбрус</p>
                         <button type="button" class="photo-card__like-btn"></button>
                     </div>
                 </li>
-                <li class="photo-card">
+                <li class="photo-card photo-card_old">
                     <img src="./images/grid-astrakhan.jpg" alt="Астрахань" class="photo-card__img">
+                    <button type="button" class="photo-card__delete-btn"></button>
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Астрахань</p>
                         <button type="button" class="photo-card__like-btn"></button>
                     </div>
                 </li>
-                <li class="photo-card">
+                <li class="photo-card photo-card_old">
                     <img src="./images/grid-dombai.jpg" alt="Домбай" class="photo-card__img">
+                    <button type="button" class="photo-card__delete-btn"></button>
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Домбай</p>
                         <button type="button" class="photo-card__like-btn"></button>
                     </div>
                 </li>
-                <li class="photo-card">
+                <li class="photo-card photo-card_old">
                     <img src="./images/grid-essentuki.jpg" alt="Ессентуки" class="photo-card__img">
+                    <button type="button" class="photo-card__delete-btn"></button>
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Ессентуки</p>
                         <button type="button" class="photo-card__like-btn"></button>
                     </div>
                 </li>
-                <li class="photo-card">
+                <li class="photo-card photo-card_old">
                     <img src="./images/grid-kamchatka.jpg" alt="Камчатка" class="photo-card__img">
+                    <button type="button" class="photo-card__delete-btn"></button>
                     <div class="photo-card__innerwrap">
                         <p class="photo-card__text">Камчатка</p>
                         <button type="button" class="photo-card__like-btn"></button>
@@ -73,17 +79,49 @@
     <footer class="footer page__footer">
         <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup popup_type_profile">
         <div class="popup__container">
-            <button type="button" class="popup__close-btn"></button>
+            <button type="button" class="popup__close-btn popup__close-btn_profile"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="popup-form">
+            <form class="popup__form popup__form_profile" name="popup-form">
                 <input name="name" type="text" class="popup__input popup__input_type_name" placeholder="Жак-Ив Кусто">
                 <input name="job" type="text" class="popup__input popup__input_type_job" placeholder="Исследователь океана">
                 <button type="submit" class="popup__save-btn">Сохранить</button>
             </form>
         </div>
     </div>
+    <div class="popup popup_type_card">
+        <div class="popup__container">
+            <button type="button" class="popup__close-btn popup__close-btn_card"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup__form_card" name="popup-form">
+                <input name="card-name" type="text" class="popup__input popup__input_type_card-name" placeholder="Название">
+                <input name="card-src" type="text" class="popup__input popup__input_type_card-src" placeholder="Ссылка на картинку">
+                <button type="submit" class="popup__save-btn">Создать</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_type_image">
+        <div class="popup__content">
+            <button type="button" class="popup__close-btn popup__close-btn_image"></button>
+            <figure class="popup__figure">
+                <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Карачаевск" class="popup__pic">
+                <figcaption class="popup__figcaption">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium id quaerat quis commodi mollitia culpa suscipit ad saepe rem ab! Sit accusamus consequatur, ab deleniti laudantium repudiandae at est assumenda?</figcaption>
+            </figure>
+        </div>
+    </div>
+    <template class="template">
+        <ul class="photo__items">
+            <li class="photo-card">
+                <img src=" " alt="Карачаевск" class="photo-card__img">
+                <button type="button" class="photo-card__delete-btn"></button>
+                <div class="photo-card__innerwrap">
+                    <p class="photo-card__text">Карачаевск</p>
+                    <button type="button" class="photo-card__like-btn"></button>
+                </div>
+            </li>
+        </ul>
+    </template>
     <script src="scripts/index.js"></script>
 </body>
 </html>
