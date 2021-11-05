@@ -24,56 +24,7 @@
             <button type="button" class="profile__add-btn"></button>
         </section>
         <section class="photo page__photo">
-            <ul class="photo__items">
-                <li class="photo-card photo-card_old">
-                    <img src="./images/grid-karachevsk.jpg" alt="Карачаевск" class="photo-card__img">
-                    <button type="button" class="photo-card__delete-btn"></button>
-                    <div class="photo-card__innerwrap">
-                        <p class="photo-card__text">Карачаевск</p>
-                        <button type="button" class="photo-card__like-btn"></button>
-                    </div>
-                </li>
-                <li class="photo-card photo-card_old">
-                    <img src="./images/grid-elbrus.jpg" alt="Эльбрус" class="photo-card__img">
-                    <button type="button" class="photo-card__delete-btn"></button>
-                    <div class="photo-card__innerwrap">
-                        <p class="photo-card__text">Гора Эльбрус</p>
-                        <button type="button" class="photo-card__like-btn"></button>
-                    </div>
-                </li>
-                <li class="photo-card photo-card_old">
-                    <img src="./images/grid-astrakhan.jpg" alt="Астрахань" class="photo-card__img">
-                    <button type="button" class="photo-card__delete-btn"></button>
-                    <div class="photo-card__innerwrap">
-                        <p class="photo-card__text">Астрахань</p>
-                        <button type="button" class="photo-card__like-btn"></button>
-                    </div>
-                </li>
-                <li class="photo-card photo-card_old">
-                    <img src="./images/grid-dombai.jpg" alt="Домбай" class="photo-card__img">
-                    <button type="button" class="photo-card__delete-btn"></button>
-                    <div class="photo-card__innerwrap">
-                        <p class="photo-card__text">Домбай</p>
-                        <button type="button" class="photo-card__like-btn"></button>
-                    </div>
-                </li>
-                <li class="photo-card photo-card_old">
-                    <img src="./images/grid-essentuki.jpg" alt="Ессентуки" class="photo-card__img">
-                    <button type="button" class="photo-card__delete-btn"></button>
-                    <div class="photo-card__innerwrap">
-                        <p class="photo-card__text">Ессентуки</p>
-                        <button type="button" class="photo-card__like-btn"></button>
-                    </div>
-                </li>
-                <li class="photo-card photo-card_old">
-                    <img src="./images/grid-kamchatka.jpg" alt="Камчатка" class="photo-card__img">
-                    <button type="button" class="photo-card__delete-btn"></button>
-                    <div class="photo-card__innerwrap">
-                        <p class="photo-card__text">Камчатка</p>
-                        <button type="button" class="photo-card__like-btn"></button>
-                    </div>
-                </li>
-            </ul>
+            <ul class="photo__items"></ul>
         </section>
     </main>
     <footer class="footer page__footer">
@@ -84,8 +35,8 @@
             <button type="button" class="popup__close-btn popup__close-btn_profile"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form popup__form_profile" name="popup-form">
-                <input name="name" type="text" class="popup__input popup__input_type_name" placeholder="Жак-Ив Кусто">
-                <input name="job" type="text" class="popup__input popup__input_type_job" placeholder="Исследователь океана">
+                <input name="name" type="text" class="popup__input popup__input_type_name" required placeholder="Жак-Ив Кусто">
+                <input name="job" type="text" class="popup__input popup__input_type_job" required placeholder="Исследователь океана">
                 <button type="submit" class="popup__save-btn">Сохранить</button>
             </form>
         </div>
@@ -95,8 +46,8 @@
             <button type="button" class="popup__close-btn popup__close-btn_card"></button>
             <h2 class="popup__title">Новое место</h2>
             <form class="popup__form popup__form_card" name="popup-form">
-                <input name="card-name" type="text" class="popup__input popup__input_type_card-name" placeholder="Название">
-                <input name="card-src" type="text" class="popup__input popup__input_type_card-src" placeholder="Ссылка на картинку">
+                <input name="card-name" type="text" class="popup__input popup__input_type_card-name" required placeholder="Название">
+                <input name="card-src" type="text" class="popup__input popup__input_type_card-src" required placeholder="Ссылка на картинку">
                 <button type="submit" class="popup__save-btn">Создать</button>
             </form>
         </div>
@@ -116,7 +67,7 @@
                 <img src=" " alt="Карачаевск" class="photo-card__img">
                 <button type="button" class="photo-card__delete-btn"></button>
                 <div class="photo-card__innerwrap">
-                    <p class="photo-card__text">Карачаевск</p>
+                    <p class="photo-card__text"></p>
                     <button type="button" class="photo-card__like-btn"></button>
                 </div>
             </li>

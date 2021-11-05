@@ -25,7 +25,7 @@ const initialCards = [
     }
 ];
 
-const PopupList = Array.from(document.querySelectorAll('.popup'));
+const popupList = Array.from(document.querySelectorAll('.popup'));
 
 const popupProfile = document.querySelector(".popup_type_profile");
 const popupCard = document.querySelector(".popup_type_card");
@@ -48,7 +48,8 @@ const jobInput = document.querySelector(".popup__input_type_job");
 const cardName = document.querySelector('.popup__input_type_card-name'); 
 const cardLink = document.querySelector('.popup__input_type_card-src');
 
-const likeButton = document.querySelectorAll(".photo-card__like-btn");
+const popupFigcaption = popupImage.querySelector('.popup__figcaption');
+const popupPic = popupImage.querySelector('.popup__pic');
 
 //Функция открытия попапа
 function openPopup(popup) {
@@ -86,8 +87,6 @@ function createCard(name, link) {
 function openImagePopup(element) {
     const placesText = element.querySelector('.photo-card__text'); 
     const placesPhoto = element.querySelector('.photo-card__img');
-    const popupFigcaption = popupImage.querySelector('.popup__figcaption');
-    const popupPic = popupImage.querySelector('.popup__pic');
     popupFigcaption.textContent = placesText.textContent;
     popupPic.src = placesPhoto.src;
     popupPic.alt = placesPhoto.alt;
@@ -109,6 +108,8 @@ function formAddHandler (event) {
     const addedCard = createCard (cardName.value, cardLink.value);
     cardsList.prepend(addedCard);
     closePopup(popupCard);
+    cardName.value = "";
+    cardLink.value = "";
 }
 
 //Функция добавление карточек 
