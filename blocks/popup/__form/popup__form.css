@@ -2,7 +2,6 @@
     margin-top: 54px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
 }
 
 @media (max-width: 550px) {

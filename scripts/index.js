@@ -54,11 +54,13 @@ const popupPic = popupImage.querySelector('.popup__pic');
 //Функция открытия попапа
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', closePopupEsc);
 }
 
 //Функция закрытия попапа
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closePopupEsc);
 }
 
 //изменение данных в полях ввода и закрытие
@@ -130,6 +132,32 @@ function makeLike(event) {
 function deleteCard(event) {
     event.target.closest('.photo-card').remove();
 }
+//функция сабмита при нажатии Enter
+function keyHandler(evt) {
+    if (evt.key === 'Enter') {
+        createCard(cardName.value, cardLink.value);
+    }
+} 
+cardName.addEventListener('keydown', keyHandler);
+cardLink.addEventListener('keydown', keyHandler);
+
+//закрытие окон на нажатие Esc
+function closePopupEsc(evt) {
+    const popupOpened = document.querySelector('.popup_opened');
+    if (evt.key === 'Escape') {
+        closePopup(popupOpened);
+    };
+}
+
+//закрытие попапа кликом на область
+function closePopupByClickOverlay(evt){
+    const popupOpened = document.querySelector('.popup_opened');
+    if (evt.target.classList.contains('popup_opened')){
+        closePopup(popupOpened);
+    };
+};
+
+document.addEventListener('mousedown',closePopupByClickOverlay);
 
 //слушатели
 popupAddButtonElement.addEventListener('click', function() {
@@ -155,8 +183,3 @@ popupCloseButtonImage.addEventListener('click', function() {
 
 formProfile.addEventListener('submit', formSubmitHandler);
 formCard.addEventListener('submit', formAddHandler);
-
-
-
-
-
