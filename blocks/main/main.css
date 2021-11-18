@@ -1,6 +1,6 @@
 .main {
     width: 100%;
-    flex: 1 1 auto;
+    min-height: calc(100vh - 147px);
 }
 
 @media (max-width: 650px) {
