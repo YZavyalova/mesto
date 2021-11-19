@@ -26,6 +26,16 @@ const popupFigcaption = popupImage.querySelector('.popup__figcaption');
 const popupPic = popupImage.querySelector('.popup__pic');
 
 const saveButton = popupCard.querySelector('.popup__save-btn');
+
+const validationConfig = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_invalid',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__input-error_active',
+}; 
+
 //Функция открытия попапа
 function openPopup(popup) {
     popup.classList.add('popup_opened');
@@ -126,8 +136,7 @@ function closePopupByClickOverlay(evt){
 
 //слушатели
 popupAddButtonElement.addEventListener('click', function() {
-    saveButton.classList.add('popup__button_invalid');// при открытии попапа кнопка неактивная
-    saveButton.disabled = true;
+    disableValidation(saveButton, validationConfig.inactiveButtonClass);
     openPopup(popupCard);
 })
 

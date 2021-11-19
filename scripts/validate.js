@@ -1,11 +1,3 @@
-const validationConfig = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_invalid',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__input-error_active',
-}; 
 
 const showInputError = (formElement, inputElement, errorMessage, {inputErrorClass, errorClass}) => {
     // Находим элемент ошибки внутри самой функции
@@ -23,9 +15,9 @@ const hideInputError = (formElement, inputElement, {inputErrorClass, errorClass}
     errorElement.textContent = '';
 }; 
 
-// Функция isValid теперь принимает formElement и inputElement,
+// Функция теперь принимает formElement и inputElement,
 // а не берёт их из внешней области видимости
-const isValid = (formElement, inputElement, validationConfig) => {
+const checkInputValidity = (formElement, inputElement, validationConfig) => {
     if (!inputElement.validity.valid) {
         showInputError(formElement, inputElement, inputElement.validationMessage, validationConfig);
     } else {
@@ -47,7 +39,7 @@ const setEventListeners = (formElement, validationConfig) => {
         inputElement.addEventListener('input', () => {
         // Внутри колбэка вызовем isValid,
         // передав ей форму и проверяемый элемент
-        isValid(formElement, inputElement, validationConfig);
+        checkInputValidity(formElement, inputElement, validationConfig);
         // Вызовем toggleButtonState и передадим ей массив полей и кнопку
         toggleButtonState(inputList, buttonElement, validationConfig);
         });
@@ -85,13 +77,18 @@ const toggleButtonState = (inputList, buttonElement, {inactiveButtonClass}) => {
     // Если есть хотя бы один невалидный инпут
     if (hasInvalidInput(inputList)) {
       // сделай кнопку неактивной
-        buttonElement.classList.add(inactiveButtonClass);
-        buttonElement.disabled = true;
+        disableValidation(buttonElement, inactiveButtonClass);
     } else {
       // иначе сделай кнопку активной
         buttonElement.classList.remove(inactiveButtonClass);
         buttonElement.disabled = false;
     }
 }; 
+
+const disableValidation = (buttonElement, inactiveButtonClass) => {
+    buttonElement.classList.add(inactiveButtonClass);// при открытии попапа кнопка неактивная 
+    buttonElement.disabled = true; 
+}
+
     // Вызовем функцию
 enableValidation(validationConfig); 
