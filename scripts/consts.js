@@ -7,9 +7,7 @@ const popupImage = document.querySelector(".popup_type_image");
 const popupEditButtonElement = document.querySelector(".profile__edit-btn");
 const popupAddButtonElement = document.querySelector(".profile__add-btn");
 
-const popupCloseButtonProfile = document.querySelector(".popup__close-btn_profile");
-const popupCloseButtonCard = document.querySelector(".popup__close-btn_card");
-const popupCloseButtonImage = document.querySelector(".popup__close-btn_image");
+const popupCloseButton = document.querySelectorAll(".popup__close-btn");
 
 const formProfile = document.querySelector(".popup__form_profile");
 const formCard = document.querySelector(".popup__form_card");
@@ -50,9 +48,7 @@ export {
     profileName,
     formCard,
     formProfile,
-    popupCloseButtonImage,
-    popupCloseButtonCard,
-    popupCloseButtonProfile,
+    popupCloseButton,
     popupAddButtonElement,
     popupEditButtonElement,
     popupImage,

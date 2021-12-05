@@ -1,13 +1,12 @@
-import { popupPic, popupFigcaption, popupCloseButtonImage, popupImage,} from './consts.js';
-import { openPopup } from './utils.js';
 
 export class Card {
     // в конструкторе будут динамические данные,
     // для каждого экземпляра свои
-    constructor(data, cardSelector) {
+    constructor(data, cardSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
         this._cardSelector = cardSelector;
+        this._handleCardClick = handleCardClick;
     }
     _getTemplate() {
      // забираем разметку из HTML и клонируем элемент
@@ -24,41 +23,33 @@ export class Card {
         // Запишем разметку в приватное поле _element. 
         // Так у других элементов появится доступ к ней.
         this._element = this._getTemplate();
+        this._cardImage = this._element.querySelector('.photo-card__img');
+        this._likeButton = this._element.querySelector('.photo-card__like-btn');
+        this._deleteButton = this._element.querySelector('.photo-card__delete-btn');
         this._setListeners();
         // Добавим данные
-        this._element.querySelector('.photo-card__img').src = this._link;
+        this._cardImage.src = this._link;
+        this._cardImage.alt = this._name;
         this._element.querySelector('.photo-card__text').textContent = this._name;
-        this._element.querySelector('.photo-card__img').alt = this._name;
         // Вернём элемент наружу
         return this._element;
     }
     _setListeners() {
-        this._element.querySelector('.photo-card__like-btn').addEventListener('click', () => {
+        this._likeButton.addEventListener('click', () => {
             this._makeLike();
         });
-        this._element.querySelector('.photo-card__delete-btn').addEventListener('click', () => {
+        this._deleteButton.addEventListener('click', () => {
             this._deleteCard();
         });
-        this._element.querySelector('.photo-card__img').addEventListener('click', () => {
-            this._openImagePopup();
+        this._cardImage.addEventListener('click', () => {
+            this._handleCardClick(this._name, this._link);
         });
-        popupCloseButtonImage.addEventListener('click', () => {
-            this._closePopup();
-        })
     }
     _makeLike() {
-        this._element.querySelector('.photo-card__like-btn').classList.toggle('photo-card__like-btn_active');
+        this._likeButton.classList.toggle('photo-card__like-btn_active');
     }
     _deleteCard() {
-        this._element.closest('.photo-card').remove();
-    }
-    _openImagePopup() {
-        popupPic.src = this._link;
-        popupFigcaption.textContent = this._name;
-        popupPic.alt = this._name;
-        openPopup(popupImage);
-    }
-    _closePopup() {
-        popupImage.classList.remove('popup_opened');
+        this._element.remove();
+        this._element = null
     }
 }

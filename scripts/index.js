@@ -1,6 +1,6 @@
 import { Card } from './Card.js'; 
 import { initialCards } from './initial-сards.js';
-import { openPopup, closePopup, closePopupByClickOverlay, } from './utils.js';
+import { openPopup, closePopup } from './utils.js';
 import { FormValidator } from './FormValidator.js';
 import { 
     validationConfig,
@@ -13,13 +13,15 @@ import {
     profileName,
     formCard,
     formProfile,
-    popupCloseButtonCard,
-    popupCloseButtonProfile,
     popupAddButtonElement,
     popupEditButtonElement,
     popupImage,
     popupCard,
-    popupProfile, } from './consts.js';
+    popupProfile, 
+    popupPic,
+    popupFigcaption,
+    popupList,
+    } from './consts.js';
 
 
 //изменение данных в полях ввода и закрытие
@@ -30,19 +32,29 @@ function formSubmitHandler (event) {
     closePopup(popupProfile);
 }
 
-function renderCard() {
-    initialCards.forEach((item) => {
-        addCard(item);
-    });
+function handleCardClick(name, link) {
+    popupPic.src = link;
+    popupFigcaption.textContent = name;
+    popupPic.alt = name;
+    openPopup(popupImage);
+}
+
+function renderCards() {
+    initialCards.forEach(addCard);
+}
+
+function createCard(item) {
+    const card = new Card(item, '.template', handleCardClick).generateCard();
+    return card;
 }
 
 function addCard(item) {
-    const card = new Card(item, '.template');
-    const cardElement = card.generateCard();
+    const cardElement = createCard(item);
     cardsList.prepend(cardElement);
 }
 
-renderCard();
+
+renderCards();
 
 //Функция сохранения формы 
 function formAddHandler (event) {
@@ -61,6 +73,19 @@ const formCardValidation = new FormValidator(validationConfig, formCard);
 formProfileValidation.enableValidation();
 formCardValidation.enableValidation();
 
+function closePopupByClickOverlay() {
+    popupList.forEach((popup) => {
+        popup.addEventListener('click', (evt) => {
+            if (evt.target.classList.contains('popup_opened')) {
+                closePopup(popup);
+            }
+            if (evt.target.classList.contains('popup__close-btn')) {
+                closePopup(popup);
+            }
+        })
+    })
+}
+closePopupByClickOverlay();
 //слушатели
 popupAddButtonElement.addEventListener('click', () => {
     openPopup(popupCard);
@@ -73,18 +98,6 @@ popupEditButtonElement.addEventListener('click', () => {
     jobInput.value = profileJob.textContent;
     openPopup(popupProfile);
 })
-
-popupCloseButtonCard.addEventListener('click', () => {
-    closePopup(popupCard);
-})
-
-popupCloseButtonProfile.addEventListener('click', () => {
-    closePopup(popupProfile);
-})
-
-popupProfile.addEventListener('click', closePopupByClickOverlay);
-popupCard.addEventListener('click', closePopupByClickOverlay);
-popupImage.addEventListener('click', closePopupByClickOverlay);
 
 formProfile.addEventListener('submit', formSubmitHandler);
 
