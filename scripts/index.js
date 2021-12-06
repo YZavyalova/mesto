@@ -23,9 +23,8 @@ import {
     popupList,
     } from './consts.js';
 
-
 //изменение данных в полях ввода и закрытие
-function formSubmitHandler (event) {
+function handleProfileSubmit (event) {
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
@@ -73,7 +72,7 @@ const formCardValidation = new FormValidator(validationConfig, formCard);
 formProfileValidation.enableValidation();
 formCardValidation.enableValidation();
 
-function closePopupByClickOverlay() {
+function handlePopupCloseByClick() {
     popupList.forEach((popup) => {
         popup.addEventListener('click', (evt) => {
             if (evt.target.classList.contains('popup_opened')) {
@@ -85,7 +84,7 @@ function closePopupByClickOverlay() {
         })
     })
 }
-closePopupByClickOverlay();
+handlePopupCloseByClick();
 //слушатели
 popupAddButtonElement.addEventListener('click', () => {
     openPopup(popupCard);
@@ -99,6 +98,6 @@ popupEditButtonElement.addEventListener('click', () => {
     openPopup(popupProfile);
 })
 
-formProfile.addEventListener('submit', formSubmitHandler);
+formProfile.addEventListener('submit', handleProfileSubmit);
 
 formCard.addEventListener('submit', formAddHandler);

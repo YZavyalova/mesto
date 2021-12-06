@@ -7,8 +7,6 @@ const popupImage = document.querySelector(".popup_type_image");
 const popupEditButtonElement = document.querySelector(".profile__edit-btn");
 const popupAddButtonElement = document.querySelector(".profile__add-btn");
 
-const popupCloseButton = document.querySelectorAll(".popup__close-btn");
-
 const formProfile = document.querySelector(".popup__form_profile");
 const formCard = document.querySelector(".popup__form_card");
 
@@ -48,7 +46,6 @@ export {
     profileName,
     formCard,
     formProfile,
-    popupCloseButton,
     popupAddButtonElement,
     popupEditButtonElement,
     popupImage,
