@@ -1,4 +1,3 @@
-const popupList = Array.from(document.querySelectorAll('.popup'));
 
 const popupProfile = document.querySelector(".popup_type_profile");
 const popupCard = document.querySelector(".popup_type_card");
@@ -16,9 +15,6 @@ const jobInput = document.querySelector('.popup__input_type_job');
 const cardName = document.querySelector('.popup__input_type_card-name'); 
 const cardLink = document.querySelector('.popup__input_type_card-src');
 
-const saveButton = popupCard.querySelector('.popup__save-btn');
-const template = document.querySelector('.template').content;
-const photoCard = template.querySelector('.photo-card');
 const cardsList = document.querySelector('.photo__items');
 
 const validationConfig = {
@@ -37,7 +33,6 @@ const profileConfig = {
 
 export {
     validationConfig,
-    saveButton,
     cardLink,
     cardName,
     formCard,
@@ -47,9 +42,6 @@ export {
     popupImage,
     popupCard,
     popupProfile,
-    popupList,
-    template, 
-    photoCard,
     cardsList,
     profileConfig,
     nameInput,
