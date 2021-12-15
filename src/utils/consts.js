@@ -10,15 +10,11 @@ const popupAddButtonElement = document.querySelector(".profile__add-btn");
 const formProfile = document.querySelector(".popup__form_profile");
 const formCard = document.querySelector(".popup__form_card");
 
-const profileName = document.querySelector(".profile__title");
-const profileJob = document.querySelector(".profile__description");
-const nameInput = document.querySelector(".popup__input_type_name");
-const jobInput = document.querySelector(".popup__input_type_job");
+const nameInput = document.querySelector('.popup__input_type_name');
+const jobInput = document.querySelector('.popup__input_type_job');
+
 const cardName = document.querySelector('.popup__input_type_card-name'); 
 const cardLink = document.querySelector('.popup__input_type_card-src');
-
-const popupFigcaption = popupImage.querySelector('.popup__figcaption');
-const popupPic = popupImage.querySelector('.popup__pic');
 
 const saveButton = popupCard.querySelector('.popup__save-btn');
 const template = document.querySelector('.template').content;
@@ -33,17 +29,17 @@ const validationConfig = {
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__input-error_active',
 };
+
+const profileConfig = {
+    profileName: '.profile__title',
+    profileJob: '.profile__description',
+};
+
 export {
     validationConfig,
     saveButton,
-    popupPic,
-    popupFigcaption,
     cardLink,
     cardName,
-    jobInput,
-    nameInput,
-    profileJob,
-    profileName,
     formCard,
     formProfile,
     popupAddButtonElement,
@@ -55,4 +51,7 @@ export {
     template, 
     photoCard,
     cardsList,
+    profileConfig,
+    nameInput,
+    jobInput,
 }

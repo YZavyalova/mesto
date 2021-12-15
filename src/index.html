@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
     <header class="header page__header">
         <a href="#">
-            <img src="./images/logo.svg" alt="логотип" class="header__logo">
+            <img src="<%=require('./images/logo.svg')%>" alt="логотип" class="header__logo">
         </a>
     </header>
     <main class="main">
         <section class="profile page__profile">
-            <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar">
+            <img src="<%=require('./images/avatar.jpg')%>" alt="аватар" class="profile__avatar">
             <div class="profile__info">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
                 <button type="button" class="profile__edit-btn"></button>
@@ -60,7 +59,7 @@
         <div class="popup__content">
             <button type="button" class="popup__close-btn popup__close-btn_image"></button>
             <figure class="popup__figure">
-                <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Карачаевск" class="popup__pic">
+                <img src="#" alt="" class="popup__pic">
                 <figcaption class="popup__figcaption">Lorem ipsum</figcaption>
             </figure>
         </div>
@@ -75,6 +74,5 @@
             </div>
         </li>
     </template>
-    <script type="module" src="scripts/index.js"></script>
 </body>
 </html>

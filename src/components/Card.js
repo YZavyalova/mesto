@@ -20,8 +20,6 @@ export class Card {
         return photoCard;
     }
     generateCard() {
-        // Запишем разметку в приватное поле _element. 
-        // Так у других элементов появится доступ к ней.
         this._element = this._getTemplate();
         this._cardImage = this._element.querySelector('.photo-card__img');
         this._likeButton = this._element.querySelector('.photo-card__like-btn');
