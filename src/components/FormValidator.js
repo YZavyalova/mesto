@@ -37,16 +37,16 @@ export class FormValidator {
 
     // Метод принимает массив полей ввода
     // и элемент кнопки, состояние которой нужно менять
-    _toggleButtonState (inputList, buttonElement) {
+    _toggleButtonState () {
         // Если есть хотя бы один невалидный инпут
-        if (this._hasInvalidInput(inputList)) {
+        if (this._hasInvalidInput(this._inputList)) {
         // сделай кнопку неактивной
-            buttonElement.classList.add(this._inactiveButtonClass);// при открытии попапа кнопка неактивная 
-            buttonElement.disabled = true;
+            this._buttonElement.classList.add(this._inactiveButtonClass);// при открытии попапа кнопка неактивная 
+            this._buttonElement.disabled = true;
         } else {
         // иначе сделай кнопку активной
-            buttonElement.classList.remove(this._inactiveButtonClass);
-            buttonElement.disabled = false;
+            this._buttonElement.classList.remove(this._inactiveButtonClass);
+            this._buttonElement.disabled = false;
         }
     };
 
@@ -65,19 +65,19 @@ export class FormValidator {
         this._inputList.forEach((inputElement) => {
             this._hideInputError(inputElement);
         });
-        this._toggleButtonState(this._inputList, this._buttonElement);
+        this._toggleButtonState();
     }
 
     _setEventListeners() {
         // Вызовем toggleButtonState, чтобы не ждать ввода данных в поля
-        this._toggleButtonState(this._inputList, this._buttonElement);
+        this._toggleButtonState();
         // Обойдём все элементы полученной коллекции
         this._inputList.forEach((inputElement) => {
           // каждому полю добавим обработчик события input
             inputElement.addEventListener('input', () => {
             this._checkInputValidity(inputElement);
             // Вызовем toggleButtonState и передадим ей массив полей и кнопку
-            this._toggleButtonState(this._inputList, this._buttonElement);
+            this._toggleButtonState();
             });
         });
     };

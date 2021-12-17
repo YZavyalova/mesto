@@ -1,7 +1,5 @@
 
 export class Card {
-    // в конструкторе будут динамические данные,
-    // для каждого экземпляра свои
     constructor(data, cardSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
@@ -9,14 +7,12 @@ export class Card {
         this._handleCardClick = handleCardClick;
     }
     _getTemplate() {
-     // забираем разметку из HTML и клонируем элемент
         const photoCard = document
         .querySelector(this._cardSelector)
         .content
         .querySelector('.photo-card')
         .cloneNode(true);
     
-  // вернём DOM-элемент карточки
         return photoCard;
     }
     generateCard() {
@@ -25,11 +21,10 @@ export class Card {
         this._likeButton = this._element.querySelector('.photo-card__like-btn');
         this._deleteButton = this._element.querySelector('.photo-card__delete-btn');
         this._setListeners();
-        // Добавим данные
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;
         this._element.querySelector('.photo-card__text').textContent = this._name;
-        // Вернём элемент наружу
+
         return this._element;
     }
     _setListeners() {
@@ -48,6 +43,6 @@ export class Card {
     }
     _deleteCard() {
         this._element.remove();
-        this._element = null
+        this._element = null;
     }
 }
