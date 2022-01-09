@@ -35,7 +35,7 @@
         <div class="popup__container">
             <button type="button" class="popup__close-btn"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form popup__form_profile" name="popup-form" novalidate>
+            <form class="popup__form popup__form_profile" name="popup-form_profile" novalidate>
                 <input id="name" name="name" type="text" class="popup__input popup__input_type_name" required placeholder="Имя" minlength="2" maxlength="40" autocomplete="off">
                 <span class="error" id="name-error"></span>
                 <input id="job" name="job" type="text" class="popup__input popup__input_type_job" required placeholder="О себе" minlength="2" maxlength="200" autocomplete="off">
@@ -48,7 +48,7 @@
         <div class="popup__container">
             <button type="button" class="popup__close-btn popup__close-btn_card"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form popup__form_card" name="popup-form" novalidate>
+            <form class="popup__form popup__form_card" name="popup__form_card" novalidate>
                 <input id="card-name" name="name" type="text" class="popup__input popup__input_type_card-name" required placeholder="Название" minlength="2" maxlength="30" autocomplete="off">
                 <span class="error" id="card-name-error"></span>
                 <input id="card-src" name="link" type="url" class="popup__input popup__input_type_card-src" required placeholder="Ссылка на картинку">
@@ -81,7 +81,7 @@
         <div class="popup__container">
             <button type="button" class="popup__close-btn"></button>
             <h2 class="popup__title">Вы уверены?</h2>
-            <form class="popup__form popup__form_del" name="popup-form" novalidate>
+            <form class="popup__form popup__form_del" name="popup__form_del" novalidate>
                 <button type="submit" class="popup__button">Да</button>
             </form>
         </div>
@@ -94,7 +94,7 @@
                 <p class="photo-card__text"></p>
                 <div class="photo-card__like-area">
                     <button type="button" class="photo-card__like-btn"></button>
-                    <span class="photo-card__like-numbers">0</span>
+                    <span class="photo-card__like-numbers"></span>
                 </div>
             </div>
         </li>

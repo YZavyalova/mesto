@@ -12,6 +12,7 @@ export class Card {
         this._handleDeleteIconClick = handleDeleteIconClick;
         this._handleLikeClick = handleLikeClick;
         this._handleDislikeClick = handleDislikeClick;
+        this._data = data;
     }
     _getTemplate() {
         const photoCard = document
@@ -21,6 +22,14 @@ export class Card {
         .cloneNode(true);
 
         return photoCard;
+    }
+
+    setLike() {
+        this._likeButton.classList.add('photo-card__like-btn_active');
+    }
+    
+    unsetLike() {
+        this._likeButton.classList.remove('photo-card__like-btn_active');
     }
 
 
@@ -34,27 +43,32 @@ export class Card {
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;
         this._element.querySelector('.photo-card__text').textContent = this._name;
-        this._likeNumber.textContent = this._likes.length;
+        this._checkLike();
+        this.countLikes(this._data);
 
         if (this._userId !== this._owner) {
             this._deleteButton.style.visibility = 'hidden';
         };
-        
-        const isLiked = this._likes.some(({_id}) => _id === this._userId); 
-
-        if (isLiked) {
-            this._likeButton.classList.add('photo-card__like-btn_active')
-        };
 
         return this._element;
     }
-    
+
+    _checkLike() { 
+        if (this._likes.some(({_id}) => _id === this._userId)) {
+            this._likeButton.classList.add('photo-card__like-btn_active');
+        }
+    }
+
+    countLikes(data) {
+        this._likeNumber.textContent = data.likes.length;
+    }
+
     _setListeners() {
-        this._likeButton.addEventListener('click', (evt) => {
-            if (evt.target.classList.contains('photo-card__like-btn_active')) {
-                this._handleDislikeClick(evt, this._likeNumber);
+        this._likeButton.addEventListener('click', () => {
+            if (this._likeButton.classList.contains('photo-card__like-btn_active')) {
+                this._handleDislikeClick();
             } else {
-                this._handleLikeClick(evt, this._likeNumber);
+                this._handleLikeClick();
             }
         });
 

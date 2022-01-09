@@ -58,8 +58,8 @@ const popupWithFormProfile = new PopupWithForm ('.popup_type_profile', (data) =>
     popupWithFormProfile.renderLoading(true)
     api.setUserInfo(data)
     .then((res) => {
-        userInfo.setUserInfo(res);
-        popupProfile.close();
+        userInfo.setUserInfo(res)
+        popupWithFormProfile.close();
     })
     .catch(err => console.log(err))
     .finally(() => {
@@ -72,8 +72,6 @@ const popupAvatar = new PopupWithForm('.popup_type_avatar', (data) => {
     api.setUserAvatar(data)
     .then((res) => {
         userInfo.setUserInfo(res);
-    })
-    .then(() => {
         popupAvatar.close();
     })
     .catch(err => console.log(err))
@@ -95,26 +93,26 @@ const createCard = (data) => {
                 api.deleteCard(data)
                     .then(() => {
                         card.deleteCard();
+                        popupWithDel.close();
                     })
                     .catch(err => console.log(err))
-                    .finally(() => {
-                        popupWithDel.close()
-                    })
                 })
         },
-        handleLikeClick: (evt, likeNumber) => {
+        handleLikeClick: () => {
             api.setLike(data)
                 .then((res) => {
-                    evt.target.classList.add('photo-card__like-btn_active');
-                    likeNumber.textContent = res.likes.length;
+                    card.setLike();
+                    card.countLikes(res);
                 })
+                .catch(err => console.log(err))
         },
-        handleDislikeClick: (evt, likeNumber) => {
+        handleDislikeClick: () => {
             api.unsetLike(data)
                 .then((res) => {
-                    evt.target.classList.remove('photo-card__like-btn_active');
-                    likeNumber.textContent = res.likes.length;
+                    card.unsetLike();
+                    card.countLikes(res);
                 })
+                .catch(err => console.log(err))
         }
     })
     
@@ -129,6 +127,7 @@ const popupWithFormCard = new PopupWithForm ('.popup_type_card', (data) => {
         .then((item) => {
             const newCard = createCard(item);
             cardList.addItem(newCard);
+            popupWithFormCard.close();
         })
         .catch(err => console.log(err))
         .finally(() => {
