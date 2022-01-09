@@ -4,7 +4,6 @@
     grid-area: info;
     width: 100%;
     max-width: 336px;
-    justify-content: center;
 }
 
 @media (max-width: 650px) {
@@ -12,5 +11,6 @@
         gap: 10px;
         margin: 26px auto 0;
         max-width: 282px;
+        justify-content: center;
     } 
 }

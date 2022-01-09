@@ -8,6 +8,8 @@ const popupAddButtonElement = document.querySelector(".profile__add-btn");
 
 const formProfile = document.querySelector(".popup__form_profile");
 const formCard = document.querySelector(".popup__form_card");
+const formAvatar = document.querySelector('.popup__form_avatar');
+const profileAvatar = document.querySelector('.profile__avatar-wrapper');
 
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
@@ -27,8 +29,9 @@ const validationConfig = {
 };
 
 const profileConfig = {
-    profileName: '.profile__title',
-    profileJob: '.profile__description',
+    name: '.profile__title',
+    about: '.profile__description',
+    avatar: '.profile__avatar',
 };
 
 export {
@@ -46,4 +49,6 @@ export {
     profileConfig,
     nameInput,
     jobInput,
+    formAvatar,
+    profileAvatar,
 }

@@ -5,6 +5,8 @@ export class PopupWithForm  extends Popup {
         this._submitCallback = submitCallback;
         this._form = this._popup.querySelector('.popup__form');
         this._inputs = this._popup.querySelectorAll('.popup__input');
+        this._currentActiveButton = this._popup.querySelector('.popup__button');
+        this._currentActiveButtonText = this._currentActiveButton.textContent;
     }
     _getInputValues() {
         this._formValues = {};
@@ -26,5 +28,13 @@ export class PopupWithForm  extends Popup {
             this._submitCallback(this._getInputValues());
             this.close();
         })
+    }
+
+    renderLoading (isLoading) {
+        if (isLoading) {
+            this._currentActiveButton.textContent = 'Загрузка...';
+        } else {
+            this._currentActiveButton.textContent = this._currentActiveButtonText;
+        }
     }
 }
